@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Comentarios
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div class="content">
+    <div class="content__search">
+      <input type="text" name="search" placeholder="Buscar Comnetario" [(ngModel)]="search" (keyup)="searchData()">
+    </div>
+    <div class="content__list">
+      <ng-container *ngFor="let item of dataGrid">
+        <div class="content__list__item"  (click)="manageData(item)">
+          <div class="content__list__item__name">{{item.name}}</div>
+          <div class="content__list__item__option">edit</div>
+        </div>
+      </ng-container>
+      
+      
+    </div>
+  </div>
+
+  <div class="btn" (click)="manageData()">
+    +
+  </div>
+  
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title (click)="initData()">CommentApp </ion-title>
+  </ion-toolbar>
+</ion-footer>

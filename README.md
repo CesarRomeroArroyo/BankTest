@@ -1,2 +1,2 @@
-# BankTest
-bankTest
+# StartIonicCordova
+Start Project for Ionic Cordova

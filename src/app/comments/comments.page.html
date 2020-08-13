@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="content">
+    <div class="content__form">
+      <input type="text" name="name" placeholder="Nombre" [(ngModel)]="user.name" required>
+      <input type="text" name="email" placeholder="Email" [(ngModel)]="user.email" required>
+      <input type="text" name="web" placeholder="Website" [(ngModel)]="user.website" required>
+      <textarea name="comment" rows="10" placeholder="Comentario" [(ngModel)]="user.comment"></textarea>
+      <ion-button *ngIf="!edit" (click)="setData()">
+        Agregar
+      </ion-button>
+      <ion-button *ngIf="edit" (click)="setData()">
+        Actualizar
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title (click)="initData()">CommentApp </ion-title>
+  </ion-toolbar>
+</ion-footer>
